@@ -50,7 +50,7 @@
 </head>
 <body>
     <div id="message">
-        Bạn có lì xì cho Lộc không?
+        Bạn có muốn lì xì cho Lộc không?
         <br>
         <button id="yesButton" onclick="yesClick()">Có</button>
         <button id="noButton">Không</button>
@@ -167,10 +167,14 @@
                 "retina_detect": true
             });
         }
-        document.getElementById("noButton").addEventListener("mouseover", function() {
+        var noButton = document.getElementById("noButton");
+        noButton.addEventListener("mouseover", moveButton);
+        noButton.addEventListener("touchstart", moveButton);
+
+        function moveButton() {
             this.style.left = Math.random() * window.innerWidth + 'px';
             this.style.top = Math.random() * window.innerHeight + 'px';
-        });
+        }
     </script>
 </body>
 </html>
